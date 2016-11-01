@@ -38,10 +38,14 @@ int main() {
 	double findDouble = 7.5;
 	string findString = "Bad";
 
+	// The fourth term to search for that will not be found.
+	int missingInt = 6;
+
 	// Search through each list for a specific term.  Display the results to the console.
 	cout << "In the list of integers, " << findInt << " is present at index " << linearSearch(intList, findInt, 5) << "." << endl;
 	cout << "In the list of doubles, " << findDouble << " is present at index " << linearSearch(doubleList, findDouble, 5) << "." << endl;
 	cout << "In the list of strings, \"" << findString << "\" is present at index " << linearSearch(stringList, findString, 5) << "." << endl;
+	cout << "In the list of integers, " << missingInt << " is not present, so the function returns " << linearSearch(intList, missingInt, 5) << "." << endl;
 	
 
 	// End function.  Everything is ok!
