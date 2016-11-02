@@ -17,7 +17,7 @@ private:
 public:
 
 	vector(); //Constructs an empty vector with the specified element type.
-	vector(int size); //Constructs a vector with the initial size, filled with default values.  Size must be greater than 0, or it defaults to 10. maxSize = size.
+	vector(int size); //Constructs a vector with the initial size, filled with default values.
 	vector(int size, T defaultValue); //Constructs a vector with the initial size, filled with specified values. Size must be greater than 0, or it defaults to 10.  maxSize = size.
 	~vector(); // The destructor for the class.  Reclaims memory allocated to the array "list".
 
@@ -48,11 +48,6 @@ inline vector<T>::vector(int size)
 	elements = 0;
 
 	list = new T[maxSize];
-
-	// Use a for loop to assign the default value to each index in the vector.
-	//for (int i = 0; (unsigned)i < elements; i++) {
-	//	list[i] = 0;
-	//}
 
 }
 
@@ -173,7 +168,7 @@ inline void vector<T>::swap(vector v2)
 template<typename T>
 inline void vector<T>::doubleCapacity() {
 
-	T* doubledList = new T[elements * 2]; // Allocate memory to the heap for the new doubled array.
+	T* doubledList = new T[maxSize * 2]; // Allocate memory to the heap for the new doubled array.
 
 	// Insert the values from the orignal array into the new array with a for loop.
 	for (int i = 0; (unsigned)i < elements; i++) {
