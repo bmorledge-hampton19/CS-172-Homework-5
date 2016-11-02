@@ -6,8 +6,6 @@
 *.user
 *.userosscache
 *.sln.docstates
-*.VC.opendb 
-*.VC.db
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -26,8 +24,6 @@ bld/
 
 # Visual Studio 2015 cache/options directory
 .vs/
-*.VC.opendb 
-*.VC.db
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -81,13 +77,14 @@ ipch/
 *.opensdf
 *.sdf
 *.cachefile
+*.VC.opendb 
+*.VC.VC.opendb
+*.VC.db
 
 # Visual Studio profiler
 *.psess
 *.vsp
 *.vspx
-*.VC.opendb 
-*.VC.db
 
 # TFS 2012 Local Workspace
 $tf/
