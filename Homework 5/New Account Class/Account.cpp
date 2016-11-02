@@ -10,6 +10,7 @@ Account::Account()
 	ID = 0;
 	balance = 0;
 	annualInterestRate = 0;
+	totalTransactions = 0;
 	name = "Ben";
 }
 
@@ -19,8 +20,9 @@ Account::Account(string name, int id, double balance)
 	this->name = name;
 	this->ID = id;
 	this->balance = balance;
-	// Default interest
+	// Default interest and totalTransactions
 	annualInterestRate = 0;
+	totalTransactions = 0;
 }
 
 int Account::getID()
@@ -46,6 +48,11 @@ string Account::getName()
 void Account::getTransaction(int transactionNumber)
 {
 	transactions[transactionNumber].displayTransactionInfo();
+}
+
+int Account::getTotalTransactions()
+{
+	return totalTransactions;
 }
 
 void Account::setID(int ID)
@@ -78,6 +85,7 @@ void Account::withdraw(double amount)
 {
 	// Subtract the withdrawl amount from the current balance.
 	balance -= amount;
+	totalTransactions++;
 
 	// Create a new transaction object for the withdrawl and add it to transactions
 	Transaction newTransaction('w', amount, balance, "Basic Withdrawl");
@@ -88,6 +96,7 @@ void Account::deposit(double amount)
 {
 	// Add the deposit amount to the current balance.
 	balance += amount;
+	totalTransactions++;
 
 	// Create a new transaction object for the deposit and add it to transactions
 	Transaction newTransaction('d', amount, balance, "Basic Deposit");
