@@ -16,7 +16,7 @@ private:
 	vector<Transaction> transactions; // A vector of transactions that have occured on the account
 
 public:
-	Account(); 
+	Account(); // Defaults ID, balance, and interest to 0 and name to Ben.
 	Account(string name, int id, double balance); // A constructer that creates an account based on the given name, id, and balance.
 
 	// Basic getters and setters
@@ -24,7 +24,7 @@ public:
 	double getBalance();
 	double getAnnualInterestRate();
 	string getName();
-	Transaction getTransaction(int transactionNumber);
+	void getTransaction(int transactionNumber); // Prints the transaction details to the screen
 	void setID(int ID);
 	void setBalance(double balance);
 	void setAnnualInterestRate(double annualInterestRate);

@@ -16,6 +16,7 @@ private:
 	string description; // Description of the transaction
 
 public:
-	Transaction(Date date, char type, double amount, double balance, string description); // Constructor which sets basic parameters.
+	Transaction(char type, double amount, double balance, string description); // Constructor which sets basic parameters.
+	void displayTransactionInfo(); // Display the information about the transaction.
 
 };
