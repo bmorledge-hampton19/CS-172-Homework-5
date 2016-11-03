@@ -147,14 +147,14 @@ inline void vector<T>::swap(vector v2)
 
 	}
 
-	vector vtemp(greaterSize); // A temporary vector to hold values during the swap process.
+	vector* vtemp = new vector(greaterSize); // A temporary vector to hold values during the swap process.
 
 	 // Using a for loop, read values into the temporary vector from the first vector, fill the first vector with values from the second, and finally fill the second vector with values from the temp.
 	for (int i = 0; (unsigned)i < greaterSize; i++) {
 
-		vtemp.list[i] = list[i];
+		vtemp->list[i] = list[i];
 		list[i] = v2.list[i];
-		v2.list[i] = vtemp.list[i];
+		v2.list[i] = vtemp->list[i];
 
 	}
 
@@ -162,6 +162,8 @@ inline void vector<T>::swap(vector v2)
 	int tempSize = elements;
 	elements = v2.elements;
 	v2.elements = elements;
+
+	delete vtemp;
 
 }
 
